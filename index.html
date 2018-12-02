@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title></title>
+
 	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		section{margin-top: 1em;}
 		.listBox{background: white;
 			margin-right: 20px;
-			position: fixed;}
+			position: fixed;
+			}
 
 		.red{
 			margin-left: 260px;}
@@ -23,10 +26,68 @@
 				font-family: Helvetica;
 				font-size: 15px;
 				font-weight: 700;
-				line-height: 22px;}
+				line-height: 22px;
+				}
 
-		li:hover {color: blue;}
+		a:visited {
+		    color: black;
+		    background-color: transparent;
+		    text-decoration: none;
+		}
 
+		a:link {
+		    color: black;
+		    background-color: transparent;
+		    text-decoration: none;
+		}
+
+		a:hover {color: blue;}
+		
+		a:active {
+		    color: white;
+		    background-color: transparent;
+		    text-decoration: none;
+		}
+
+		.dropdown .dropbtn {
+			list-style-type:none;
+			margin: 0px;
+			font-family: Helvetica;
+			font-size: 15px;
+			font-weight: 700;
+			line-height: 22px;   
+		    border: none;
+		    outline: none;
+		    color: black;
+		    margin: 0px;
+		    padding: 0px;
+		}
+
+		.dropdown-content {
+		    display: none;
+		    position: absolute;
+		    background-color: #f9f9f9;
+		    min-width: 160px;
+		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		    z-index: 1;
+		}
+
+		.dropdown-content a {
+		    float: none;
+		    color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+		    display: block;
+		    text-align: left;
+		}
+
+		.dropdown-content a:hover {
+		    background-color: #ddd;
+		}
+
+		.dropdown:hover .dropdown-content {
+		    display: block;
+		}
 
 		#container {font-size: 110px;
 					font-family: 'Black Han Sans', sans-serif;
@@ -43,10 +104,22 @@
 	<section>
 		<div class="listBox square">
 			<div class="list">
-			  <li>HOME</li>
-			  <li>ABOUT ME</li>
-			  <li>CODING</li>
-			  <li>POSTER</li>
+			  <li><a href="https://kim50.github.io/kim50_home/">HOME</a></li>
+			  <li><a href="#home">ABOUT ME</a></li>
+			
+			   <div class="dropdown">
+
+				    <button class="dropbtn"><a href="https://kim50.github.io/kim50_home/">CODING</a> 
+				      <i class="fa fa-caret-down"></i>
+				    </button>
+				    <div class="dropdown-content">
+				      <a href="#">#1. Line Dancing</a>
+				      <a href="#">Link 2</a>
+				      <a href="#">Link 3</a>
+				    </div>
+				  </div> 
+
+			  <li><a href="#home">POSTER</a></li>
 			</div>  
 		</div>
 		<div class="red rect">
