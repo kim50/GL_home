@@ -5,11 +5,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
 	<style>
 		section{margin-top: 1em;}
-		.blue{background: purple;
+		.listBox{background: white;
 			margin-right: 20px;
 			position: fixed;}
 
-		.red{background: green;
+		.red{
 			margin-left: 260px;}
 
 		.rect{width:1110px; float:left;}
@@ -25,28 +25,33 @@
 				font-weight: 700;
 				line-height: 22px;}
 
-		li:hover {color: white;}
+		li:hover {color: blue;}
 
 
 		#container {font-size: 110px;
 					font-family: 'Black Han Sans', sans-serif;
 					line-height: 120px;
 					}
-
+		@keyframes rotate{
+			from{transform: rotate(0deg)}
+			to{transform: rotate(360deg)}
+		}
 
 	</style>
 </head>
 <body>
 	<section>
-		<div class="blue square">
+		<div class="listBox square">
 			<div class="list">
-			  <li>About Me</li>
-			  <li>Coding</li>
-			  <li>Poster</li>
+			  <li>HOME</li>
+			  <li>ABOUT ME</li>
+			  <li>CODING</li>
+			  <li>POSTER</li>
 			</div>  
 		</div>
 		<div class="red rect">
-				<div id="container">
+			<div id="monitor"></div>
+			<div id="container">
 		안녕하세요.<br>
 		이 곳은 김수인의 그래픽 실험실입니다.<br><br>
 		Hello.<br>
@@ -55,11 +60,61 @@
 		ここに私のグラフィックラボです。<br><br>
 		Bonjour.<br>
 		Ceci est mon laboratoire graphique.<br>
-	</div>
+			</div>
 		</div>
 		<div class="clear"></div>
 	</section>
 
+<script type="text/javascript">
+	window.onscroll = function(){
+		var t = document.documentElement.scrollTop;
+
+		if(t < 100){
+			container.style.background = "red";
+		}else if(t < 100){
+			container.style.background = "orange";
+		}else if(t < 200){
+			container.style.background = "yellow";
+		}else if(t < 300){
+			container.style.background = "green";
+		}else if(t < 400){
+			container.style.background = "blue";
+		}else if(t < 500){
+			container.style.background = "navy";
+		}else{
+			container.style.background = "purple";
+		}
+
+		if(t > 2240 && t < 2800){ 
+			bloom.style.animationPlayState = "running";
+		}else{
+			bloom.style.animationPlayState = "paused";
+		}
+	}
+
+	//자동스크롤
+	var s = 0;
+	//setInterval(count,100);
+	function count(){
+		s = s + 1;
+		//s합이 30이넘어야 3초가 지난것
+		if(s > 30){
+			var t = document.documentElement.scrollTop;
+			t = t + 10;
+			document.documentElement.scrollTop = t;	
+		}
+		
+	}
+
+	document.body.onmousemove = function(){
+		s = 0; //마우스 반
+	}
+
+	//스크롤 예제
+	//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_svg_scrolldrawing
+
+
+	</script>
 
 
 </body>
